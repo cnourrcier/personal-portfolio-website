@@ -13,13 +13,23 @@
     font-size: 62.5%;
 }
 
-body {
-    font-family: sans-serif;
-    /* background: var(--color2); */
-    /* color: #FBFFF1; */
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: sans-serif;
+}
 
+section {
+    padding-top: 70px;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+}
 
 
 /* NAVBAR AND DROPDOWN MENU */
@@ -66,7 +76,6 @@ body {
     color: #33A2E7;
 }
 
-
 /* WELCOME SECTION */
 
 .welcome-section {
@@ -93,6 +102,48 @@ body {
     transition: font-size 0.3s ease, padding-left 0.5s ease-in-out;
 }
 
+
+/* PROJECTS SECTION*/
+
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Align items vertically in the center */
+    align-items: center;
+    /* Align items horizontally in the center */
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--color1);
+    color: var(--color3);
+}
+
+.projects-grid {
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+}
+
+.project {
+    margin: 1vw;
+    padding: 1vw;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 2.2rem;
+    overflow: hidden;
+    /* Ensure the image does not overflow the container */
+}
+
+.project:hover {
+    opacity: 50%;
+}
+
+
+/* MEDIA AND KEYFRAMES*/
 
 @media screen and (min-width: 900px) {
 
