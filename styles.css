@@ -11,6 +11,7 @@
     text-decoration: none;
     list-style: none;
     font-size: 62.5%;
+    box-sizing: border-box;
 }
 
 html {
@@ -29,6 +30,12 @@ img {
     width: 100%;
     object-fit: cover;
     height: auto;
+}
+
+h2 {
+    font-size: 6rem;
+    text-align: center;
+    margin: 30px;
 }
 
 
@@ -57,10 +64,12 @@ img {
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
+    padding-right: 2rem;
+    /* aligns with burger menu*/
 }
 
 .nav-list li {
-    padding: 1.5rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
 }
@@ -97,10 +106,11 @@ img {
     transition: font-size 0.3s ease, padding-left 0.5s ease-in-out;
 }
 
-.welcome-section p {
-    font-size: 4rem;
-    transition: font-size 0.3s ease, padding-left 0.5s ease-in-out;
+.welcome-section p i {
+    font-size: 3rem;
+    transition: font-size 0.3s ease;
 }
+
 
 
 /* PROJECTS SECTION*/
@@ -129,27 +139,83 @@ img {
 }
 
 .project {
+    display: flex;
+    /* Use flexbox for layout */
+    flex-direction: column;
+    /* Stack elements vertically */
+    justify-content: flex-end;
+    /* Align items to the bottom */
     margin: 1vw;
     padding: 1vw;
     border-radius: 2px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    font-size: 2.2rem;
+    font-size: 5.5rem;
+    text-align: center;
+    color: var(--color3);
     overflow: hidden;
     /* Ensure the image does not overflow the container */
 }
 
 .project:hover {
-    opacity: 50%;
+    background-color: var(--color2);
+    color: var(--color1);
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    /* Align items vertically in the center */
+    align-items: center;
+    /* Align items horizontally in the center */
+    background-color: var(--color2);
+    color: var(--color1);
+    width: 100vw;
+    height: 100vh;
+    padding: 50px 0;
+}
+
+.contact-section h2 {
+    margin-bottom: 10px;
 }
 
 
-/* MEDIA AND KEYFRAMES*/
+.contact-section p i {
+    font-size: 1.8rem;
+}
 
-@media screen and (min-width: 900px) {
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contact-links .btn {
+    color: var(--color1);
+    margin: 0 30px;
+    font-size: 3.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contact-links .btn:hover {
+    transform: translateY(5px);
+    color: var(--color3)
+}
+
+
+/* MEDIA AND KEYFRAMES */
+
+@media screen and (min-width: 850px) {
 
     /* NAVBAR */
     .nav-list a {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
     /* WELCOME SECTION */
@@ -160,9 +226,35 @@ img {
     .welcome-section p {
         font-size: 5rem;
     }
+
+    h2 {
+        font-size: 6.5rem;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+
+    /* NAVBAR */
+    .nav-list a {
+        font-size: 2.4rem;
+    }
+
+    /* WELCOME SECTION */
+    .welcome-section h1 span {
+        font-size: 8rem;
+    }
+
+    .welcome-section p {
+        font-size: 6rem;
+    }
+
+    h2 {
+        font-size: 7rem;
+    }
 }
 
 
+/* > 500px*/
 @media screen and (max-width: 500px) {
 
     /* NAVBAR AND DROPDOWN MENU */
@@ -251,29 +343,19 @@ img {
 
     /* WELCOME SECTION*/
 
-    .welcome-section {
-        /* Stack items vertically */
-        justify-content: center;
-        /* Align items vertically in the center */
-        align-items: flex-start;
-        /* Align items horizontally in the center */
-        height: 100vh;
-        width: 100vw;
-        background-color: var(--color2);
-        color: var(--color1);
-    }
-
     .welcome-section h1 span {
-        display: block;
-        font-size: 6rem;
-        padding-left: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 7rem;
     }
 
     .welcome-section p {
-        font-size: 4rem;
-        padding-left: 30px;
+        font-size: 5rem;
     }
+
 }
+
 
 /* DROPDOWN MENU */
 @keyframes fadeIn {
