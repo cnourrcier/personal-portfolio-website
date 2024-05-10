@@ -2,6 +2,7 @@
     --color1: #ffff;
     --color2: #33A2E7;
     --color3: #28242E;
+    --color4: #5f5f5f;
     --color1alt: #FBFFF1;
 }
 
@@ -30,6 +31,8 @@ img {
     width: 100%;
     object-fit: cover;
     height: auto;
+    border-radius: 2px;
+    padding: 5px;
 }
 
 h2 {
@@ -82,7 +85,7 @@ h2 {
 }
 
 .nav-list li:hover a {
-    color: #33A2E7;
+    color: var(--color2);
 }
 
 /* WELCOME SECTION */
@@ -138,7 +141,8 @@ h2 {
     max-width: 1280px;
 }
 
-.project-tile {
+.project-container {
+    background-color: var(--color3);
     display: flex;
     /* Use flexbox for layout */
     flex-direction: column;
@@ -150,7 +154,7 @@ h2 {
     padding: 10px;
     border-radius: 2px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    font-size: 5.5rem;
+    font-size: 3.5rem;
     text-align: center;
     color: var(--color3);
     overflow: hidden;
@@ -158,9 +162,27 @@ h2 {
     max-width: 300px;
 }
 
-.project:hover {
-    background-color: var(--color2);
+.project-text,
+.project-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.project-title {
     color: var(--color1);
+}
+
+.project-text {
+    background-color: var(--color3);
+    color: var(--color1);
+}
+
+.project:hover .project-text {
+    background-color: var(--color1);
+    color: var(--color3);
 }
 
 /* CONTACT SECTION */
