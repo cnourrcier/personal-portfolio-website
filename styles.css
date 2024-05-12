@@ -17,7 +17,7 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--color2);
+    width: 100%;
 }
 
 body {
